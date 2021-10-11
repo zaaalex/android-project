@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.lab4.databinding.FragmentEventsBinding
+import com.example.lab4.ui.log.Logcycle
 
 class EventsFragment : Fragment() {
 
@@ -24,6 +25,7 @@ class EventsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Logcycle(lifecycle, "EventsActivity")
         eventsViewModel =
             ViewModelProvider(this).get(EventsViewModel::class.java)
 

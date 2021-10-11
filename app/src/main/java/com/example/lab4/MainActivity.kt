@@ -3,11 +3,13 @@ package com.example.lab4
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Lifecycle
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.lab4.databinding.ActivityMainBinding
+import com.example.lab4.ui.log.Logcycle
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        Logcycle(lifecycle, "MainActivity")
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

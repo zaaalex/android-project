@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.lab4.databinding.FragmentProfileBinding
+import com.example.lab4.ui.log.Logcycle
 
 class ProfileFragment : Fragment() {
 
@@ -24,6 +25,7 @@ class ProfileFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Logcycle(lifecycle, "ProfileActivity")
         profileViewModel =
             ViewModelProvider(this).get(ProfileViewModel::class.java)
 

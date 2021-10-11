@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.lab4.databinding.FragmentHolidayBinding
+import com.example.lab4.ui.log.Logcycle
 
 class HolidayFragment : Fragment() {
 
@@ -24,6 +25,7 @@ class HolidayFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Logcycle(lifecycle, "HolidayActivity")
         holidayViewModel =
             ViewModelProvider(this).get(HolidayViewModel::class.java)
 
