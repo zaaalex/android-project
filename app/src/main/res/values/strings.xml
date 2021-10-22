@@ -3,4 +3,8 @@
     <string name="events">events</string>
     <string name="holiday">holiday</string>
     <string name="profile">profile</string>
+    <string name="add">add</string>
+    <string name="data">Data</string>
+    <string name="desc">Desc</string>
+    <string name="title">Title</string>
 </resources>

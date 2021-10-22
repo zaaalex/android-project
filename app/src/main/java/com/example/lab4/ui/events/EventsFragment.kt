@@ -4,41 +4,42 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.lab4.databinding.FragmentEventsBinding
+import com.example.lab4.ui.events.EventAdapter
+import com.example.lab4.ui.events.EventsViewModel
 import com.example.lab4.ui.log.Logcycle
 
 class EventsFragment : Fragment() {
 
-    private lateinit var eventsViewModel: EventsViewModel
+    private val eventsAdapter = EventAdapter()
+    private val eventsViewModel: EventsViewModel by viewModels()
     private var _binding: FragmentEventsBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         Logcycle(lifecycle, "EventsActivity")
-        eventsViewModel =
-            ViewModelProvider(this).get(EventsViewModel::class.java)
-
+        
         _binding = FragmentEventsBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textEvents
-        eventsViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-        return root
+        return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.list.apply {
+            adapter = eventsAdapter
+            layoutManager = LinearLayoutManager(context)
+        }
+
+        eventsViewModel.getEvents().observe(viewLifecycleOwner) {
+            eventsAdapter.reload(it)
+        }
+    }
+    
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

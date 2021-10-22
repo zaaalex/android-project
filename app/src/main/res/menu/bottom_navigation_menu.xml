@@ -3,16 +3,19 @@
 
     <item
         android:id="@+id/navigation_events"
+        android:enabled="true"
         android:icon="@drawable/ic_baseline_event_note_24"
         android:title="@string/events" />
 
     <item
         android:id="@+id/navigation_holiday"
+        android:enabled="true"
         android:icon="@drawable/ic_baseline_cake_24"
         android:title="@string/holiday" />
 
     <item
         android:id="@+id/navigation_profile"
+        android:enabled="true"
         android:icon="@drawable/ic_baseline_account_circle_24"
         android:title="@string/profile" />
 
