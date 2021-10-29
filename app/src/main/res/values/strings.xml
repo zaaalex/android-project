@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">lab4</string>
+    <string name="shareDescription" translatable="false">Great app!</string>
     <string name="events">events</string>
     <string name="holiday">holiday</string>
     <string name="profile">profile</string>
@@ -7,4 +8,9 @@
     <string name="data">Data</string>
     <string name="desc">Desc</string>
     <string name="title">Title</string>
+    <string name="share">share</string>
+    <string name="settings">settings</string>
+    <string name="about">about</string>
+    <string name="submit">submit</string>
+    <string name="done">done</string>
 </resources>

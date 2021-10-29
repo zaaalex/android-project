@@ -1,4 +1,4 @@
-package com.example.lab4.ui.events
+package com.example.lab4.ui.events.model
 
 import java.util.*
 

@@ -1,9 +1,9 @@
 package com.example.lab4.ui.events
 
-import android.provider.ContactsContract
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.lab4.ui.events.model.EventReminder
 import java.util.*
 
 class EventsViewModel: ViewModel() {

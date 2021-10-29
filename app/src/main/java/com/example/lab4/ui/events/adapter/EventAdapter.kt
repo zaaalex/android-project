@@ -1,4 +1,4 @@
-package com.example.lab4.ui.events
+package com.example.lab4.ui.events.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lab4.R
+import com.example.lab4.ui.events.model.EventReminder
 
 class EventAdapter : RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
 
@@ -32,7 +33,7 @@ class EventAdapter : RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
             private val nameView: TextView by lazy { itemView.findViewById(R.id.event_item) }
 
             @SuppressLint("SetTextI18n")
-            fun bind(eventReminder:EventReminder) {
+            fun bind(eventReminder: EventReminder) {
                 nameView.text = eventReminder.title + " " + eventReminder.desc + " " + eventReminder.date
             }
         }

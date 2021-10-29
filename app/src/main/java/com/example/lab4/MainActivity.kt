@@ -1,6 +1,7 @@
 package com.example.lab4
 
 import android.os.Bundle
+import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -10,7 +11,7 @@ import com.example.lab4.ui.events.EventsFragment
 import com.example.lab4.ui.holiday.HolidayFragment
 import com.example.lab4.ui.log.Logcycle
 import com.example.lab4.ui.profile.ProfileFragment
-
+import com.google.android.material.snackbar.Snackbar
 
 
 class MainActivity : AppCompatActivity() {
